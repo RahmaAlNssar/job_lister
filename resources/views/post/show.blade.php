@@ -40,43 +40,43 @@
               <p class="job-title">{{$post->job_title}}</p>
               <div class="">
                 <p class="job-views">
-                  <span class="text-success">Views: {{$post->views}} </span> |
-                  <span class="text-danger">Apply Before: {{date('d',$post->remainingDays())}} days</span>
+                  <span class="text-success">{{ __('job-show.views') }}: {{$post->views}} </span> |
+                  <span class="text-danger">{{ __('job-show.Apply Before') }}: {{date('d',$post->remainingDays())}} days</span>
                 </p>
               </div>
             </div>
             <div class="job-bdy p-3 my-3">
               <div class="job-level-description">
-                <p class="font-weight-bold">Basic job level description</p>
+                <p class="font-weight-bold">{{ __('job-show.Basic job level description') }}</p>
                 <table class="table table-hover">
                   <tbody>
                     <tr>
-                      <td width="33%">Job Category</td>
+                      <td width="33%">{{ __('job-show.Job Category') }}</td>
                       <td width="3%">:</td>
                       <td width="64%"><a href="/jobs">{{$company->getCategory->category_name}}</a></td>
                     </tr>
                     <tr>
-                      <td width="33%">Job Level</td>
+                      <td width="33%">{{ __('job-show.Job Level') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">{{$post->job_level}}</td>
                     </tr>
                     <tr>
-                      <td width="33%">No of vacancy[s]</td>
+                      <td width="33%">{{ __('job-show.No of vacancy[s]') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">[ <strong>{{$post->vacancy_count}}</strong> ]</td>
                     </tr>
                     <tr>
-                      <td width="33%">Employment type</td>
+                      <td width="33%">{{ __('job-show.Employment type') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">{{$post->employment_type}}</td>
                     </tr>
                     <tr>
-                      <td width="33%">Offered Salary(Monthly)</td>
+                      <td width="33%">{{ __('job-show.Offered Salary(Monthly)') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">{{$post->salary}}</td>
                     </tr>
                     <tr>
-                      <td width="33%">Apply before(Deadline)</td>
+                      <td width="33%">{{ __('job-show.Apply before(Deadline)') }}</td>
                       <td width="3%">:</td>
                       <td width="64%" class="text-danger">{{date('l, jS \of F Y',$post->deadlineTimestamp())}}, ({{ date('d',$post->remainingDays())}} days from now)</td>
                     </tr>
@@ -84,21 +84,21 @@
                 </table>
               </div>
               <div class="job-level-description">
-                <p class="font-weight-bold">Job Specification</p>
+                <p class="font-weight-bold">{{ __('job-show.Job Specification') }}</p>
                 <table class="table table-hover">
                   <tbody>
                     <tr>
-                      <td width="33%">Education level</td>
+                      <td width="33%">{{ __('job-show.Education level') }}</td>
                       <td width="3%">:</td>
                       <td width="64%"><a href="/jobs"> {{$post->education_level}}</a></td>
                     </tr>
                     <tr>
-                      <td width="33%">Experience Required</td>
+                      <td width="33%">{{ __('job-show.Experience Required') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">{{$post->experience}}</td>
                     </tr>
                     <tr>
-                      <td width="33%">Professional Skill Required</td>
+                      <td width="33%">{{ __('job-show.Professional Skill Required') }}</td>
                       <td width="3%">:</td>
                       <td width="64%">
                         @foreach($post->getSkills() as $skill)
@@ -117,8 +117,8 @@
               <hr>
               <div class="d-flex justify-content-between">
                 <div>
-                  <a href="{{route('account.applyJob',['post_id'=>$post])}}" class="btn primary-btn">Apply now</a>
-                  <a href="{{route('savedJob.store',['id'=>$post])}}" class="btn primary-outline-btn"><i class="fas fa-star"></i> Save job</a>
+                  <a href="{{route('account.applyJob',['post_id'=>$post])}}" class="btn primary-btn">{{ __('job-show.Apply now') }}</a>
+                  <a href="{{route('savedJob.store',['id'=>$post])}}" class="btn primary-outline-btn"><i class="fas fa-star"></i> {{ __('job-show.Save job') }}</a>
                 </div>
                 <div class="social-links">
                   <a href="https://www.facebook.com"  target="_blank" class="btn btn-primary"><i class="fab fa-facebook"></i></a>
@@ -134,18 +134,18 @@
       <div class="col-sm-12 col-md-4">
         <div class="card d-none d-md-block mb-3">
           <div class="card-header">
-            Job Action
+            {{ __('job-show.Job Action') }}
           </div>
           <div class="card-body">
             <div class="btn-group w-100">
-              <a href="{{route('account.applyJob',['post_id'=>$post->id])}}" class="btn primary-outline-btn float-left">Apply Now</a>
-              <a href="{{route('savedJob.store',['id'=>$post->id])}}" class="btn primary-btn"><i class="fas fa-star"></i> Save job</a>
+              <a href="{{route('account.applyJob',['post_id'=>$post->id])}}" class="btn primary-outline-btn float-left">{{ __('job-show.Apply Now') }}</a>
+              <a href="{{route('savedJob.store',['id'=>$post->id])}}" class="btn primary-btn"><i class="fas fa-star"></i> {{ __('job-show.Save job') }}</a>
             </div>
           </div>
         </div>
         <div class="card ">
           <div class="card-header">
-            Similar Jobs
+            {{ __('job-show.Similar Jobs') }}
           </div>
           <div class="card-body">
             <div class="similar-jobs">
@@ -159,14 +159,14 @@
                     <a href="{{route('post.show',['job'=>$post])}}" class="job-category text-muted font-weight-bold">
                       <p class="text-muted h6">{{$job->job_title}}</p>
                       <p class="small">{{$job->company->title}}</p>
-                      <p class="font-weight-normal small text-danger">Deadline: {{date('d',$job->remainingDays())}} days</p>
+                      <p class="font-weight-normal small text-danger">{{ __('job-show.Deadline') }}: {{date('d',$job->remainingDays())}} {{ __('job-show.days') }}</p>
                     </a>
                   </div>
                 </div>
                 @else
                 <div class="card">
                   <div class="card-header">
-                    <p>No similar jobs</p>
+                    <p>{{ __('job-show.No similar jobs') }}</p>
                   </div>
                 </div>
                 @endif
