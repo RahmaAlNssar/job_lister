@@ -3,7 +3,7 @@ return [
 'User Account'=>'حساب المستخدم',
 'Account Settings'=>'إعدادات الحساب',
 'User'=>'مستخدم عادي',
-'Author (Job Lister)'=>'الكاتب(وظيفة لبستر)',
+'Author (Job Lister)'=>'الكاتب( قائمة الوظيفة)',
 'Information'=>'المعلومات',
 'Email'=>'البريد الإلكلتروني',
 'Phone'=>'رقم التلفون',
