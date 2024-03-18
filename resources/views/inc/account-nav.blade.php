@@ -19,7 +19,7 @@
     </li>
     <li class="list-group-item list-group-item-action {{ request()->segment(2) == 'post' && request()->segment(3) == 'create' ? 'active': ''}}">
       <a href="{{route('post.create')}}" class="account-nav-link">
-        <i class="fas fa-plus-square"></i> {{ __('user-account.Create Job listing') }}
+        <i class="fas fa-plus-square"></i> {{ __('account-nav.Create Job listing') }}
     </li>
     <li class="list-group-item list-group-item-action {{ request()->segment(2) == 'job-application' ? 'active': ''}}">
       <a href="{{route('jobApplication.index')}}" class="account-nav-link">

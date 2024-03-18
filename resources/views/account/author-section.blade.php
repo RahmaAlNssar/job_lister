@@ -3,7 +3,7 @@
 @section('content')
   <div class="account-layout  border">
     <div class="account-hdr bg-primary text-white border">
-      Author Section
+      {{ __('author-section.Author Section') }}
     </div>
     <div class="account-bdy p-3">
         <div class="row mb-3">
@@ -13,7 +13,7 @@
                       <div class="rotate">
                           <i class="fas fa-users fa-4x"></i>
                       </div>
-                      <h6 class="text-uppercase">My Posts</h6>
+                      <h6 class="text-uppercase">{{ __('author-section.My Posts') }}</h6>
                       <h1 class="">{{$company? $company->posts->count() : 0}}</h1>
                   </div>
               </div>
@@ -24,7 +24,7 @@
                       <div class="rotate">
                           <i class="fas fa-th fa-4x"></i>
                       </div>
-                      <h6 class="text-uppercase">Live Posts</h6>
+                      <h6 class="text-uppercase">{{ __('author-section.Live Posts') }}</h6>
                       <h1 class="">{{$livePosts?? 0}}</h1>
                   </div>
               </div>
@@ -36,7 +36,7 @@
                         <div class="rotate">
                             <i class="fas fa-envelope fa-4x"></i>
                         </div>
-                        <h6 class="text-uppercase">Total Applications</h6>
+                        <h6 class="text-uppercase">{{ __('author-section.Total Applications') }}</h6>
                         <h1 class="">{{$applications? $applications->count():0}}</h1>
                     </div>
                 </div>
@@ -49,19 +49,19 @@
               <div class="col-sm-12 col-md-12">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">Manage Company Details</h4>
-                          <p class="mb-3 alert alert-info">For job listings you need to add Company details.</p>
+                          <h4 class="card-title">{{ __('author-section.Manage Company Details') }}</h4>
+                          <p class="mb-3 alert alert-info">{{ __('author-section.For job listings you need to add Company details') }}.</p>
                           
                           <div class="mb-3 d-flex">
                             @if(!$company)
-                            <a href="{{route('company.create')}}" class="btn primary-btn mr-2">Create Company</a>
+                            <a href="{{route('company.create')}}" class="btn primary-btn mr-2">{{ __('author-section.Create Company') }}</a>
                             @else
-                            <a href="{{route('company.edit')}}" class="btn secondary-btn mr-2">Edit Company</a>
+                            <a href="{{route('company.edit')}}" class="btn secondary-btn mr-2">{{ __('author-section.Edit Company') }}</a>
                             <div class="ml-auto">
                                 <form action="{{route('company.destroy')}}" id="companyDestroyForm" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" id="companyDestroyBtn" class="btn danger-btn">Delete Company</a>
+                                    <button type="submit" id="companyDestroyBtn" class="btn danger-btn">{{ __('author-section.Delete Company') }}</a>
                                 </form>
                             </div>
                             @endif
@@ -91,8 +91,8 @@
           <div class="col-lg-12 col-md-8 col-sm-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title mb-3">Manage Posts (Jobs)</h4>
-                <a href="{{route('post.create')}}" class="btn primary-btn">Create new job listing</a>
+                <h4 class="card-title mb-3">{{ __('author-section.Manage Posts (Jobs)') }}</h4>
+                <a href="{{route('post.create')}}" class="btn primary-btn">{{ __('author-section.Create new job listing') }}</a>
               </div>
             </div>
             <div class="table-responsive">
@@ -100,11 +100,11 @@
                     <thead class="thead-inverse">
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>Level</th>
-                            <th>No of vacancies</th>
-                            <th>Deadline</th>
-                            <th>Action</th>
+                            <th>{{ __('author-section.Title') }}</th>
+                            <th>{{ __('author-section.Level') }}</th>
+                            <th>{{ __('author-section.No of vacancies') }}</th>
+                            <th>{{ __('author-section.Deadline') }}</th>
+                            <th>{{ __('author-section.Action') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -134,7 +134,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td>You havent created a company yet.</td>
+                                <td>{{ __('author-section.You havent created a company yet') }}.</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>

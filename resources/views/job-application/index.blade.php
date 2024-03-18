@@ -3,22 +3,22 @@
 @section('content')
   <div class="account-layout  border">
     <div class="account-hdr bg-primary text-white border">
-      Job Applications
+      {{ __('job-application.Job Applications') }}
     </div>
     <div class="account-bdy p-3">
       <div class="row">
         <div class="col-sm-12 col-md-12">
-          <p class="mb-3 alert alert-primary">Listing all the Applicants who applied for your <strong>job listings</strong>.</p>
+          <p class="mb-3 alert alert-primary">{{ __('job-application.Listing all the Applicants who applied for your') }} <strong>{{ __('job-application.job listings') }}</strong>.</p>
           <div class="table-responsive pt-3">
             <table class="table table-hover table-striped small">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Applicant Name</th>
-                  <th>Email</th>
-                  <th>Job Title</th>
-                  <th>Applied on</th>
-                  <th>Actions</th>
+                  <th>{{ __('job-application.Applicant Name') }}</th>
+                  <th>{{ __('job-application.Email') }}</th>
+                  <th>{{ __('job-application.Job Title') }}</th>
+                  <th>{{ __('job-application.Applied on') }}</th>
+                  <th>{{ __('job-application.Actions') }}</th>
                 </tr>
               </thead>
               <tbody>
