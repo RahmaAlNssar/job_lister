@@ -3,15 +3,15 @@
 @section('content')
 <div class="account-layout border">
   <div class="account-hdr bg-primary text-white border">
-    Job Application
+    {{ __('job-application.Job Application') }}
   </div>
   <div class="account-bdy p-3">
-  <p class="alert alert-primary">User named <span class="text-capitalize"> ({{$applicant->name}})</span> applied for your listing on {{$application->created_at}}</p>
+  <p class="alert alert-primary"{{__('job-application.User named') }} ({{$applicant->name}})</span> {{ __('job-application.applied for your listing on') }} {{$application->created_at}}</p>
     <div class="row">
       <div class="col-sm-12 col-md-12 mb-5">
         <div class="card">
           <div class="card-header">
-            User Profile (Applicant)
+            {{ __('job-application.User Profile (Applicant)') }}
           </div>
           <div class="card-body">
             <div class="row">
@@ -20,8 +20,8 @@
               </div>
               <div class="col-9">
                 <h6 class="text-info text-capitalize">{{$applicant->name}}</h6>
-                <p class="my-2"><i class="fas fa-envelope"></i> Email: {{$applicant->email}}</p>
-                <a href="mailto:{{$applicant->email}}" class="btn primary-btn" title="click to send email">Send user an email</a>
+                <p class="my-2"><i class="fas fa-envelope"></i> {{ __('job-application.Email') }}: {{$applicant->email}}</p>
+                <a href="mailto:{{$applicant->email}}" class="btn primary-btn" title="click to send email">{{ __('job-application.Send user an email') }}</a>
               </div>
             </div>
           </div>
@@ -30,7 +30,7 @@
       <div class="col-sm-12 col-md-12">
         <div class="card">
           <div class="card-header">
-            Key Job Requirements
+            {{ __('job-application.Key Job Requirements') }}
           </div>
           <div class="card-body">
             <div class="row">
@@ -44,18 +44,18 @@
                 <h6 class="text-uppercase">
                   <a href="{{route('account.employer',['employer'=>$company])}}">{{$company->title}}</a>
                 </h6>
-                <p class="my-2"><i class="fas fa-map-marker-alt"></i> Location: {{$post->job_location}}</p>
-                <p class="text-danger small">{{date('l, jS \of F Y',$post->deadlineTimestamp())}}, ({{ date('d',$post->remainingDays())}} days from now)</p>
+                <p class="my-2"><i class="fas fa-map-marker-alt"></i> {{ __('job-application.Location') }}: {{$post->job_location}}</p>
+                <p class="text-danger small">{{date('l, jS \of F Y',$post->deadlineTimestamp())}}, ({{ date('d',$post->remainingDays())}} {{ __('job-application.days from now') }})</p>
               </div>
             </div>
             <div class="mb-3 d-flex justify-content-end">
               <div class="my-2">
-                <a href="{{route('post.show',['job'=>$post])}}" class="secondary-link"><i class="fas fa-briefcase"></i> View job</a>
+                <a href="{{route('post.show',['job'=>$post])}}" class="secondary-link"><i class="fas fa-briefcase"></i> {{ __('job-application.View job') }}</a>
               </div>
             </div>
             <div class="mb-3 d-flex justify-content-end">
               <div class="small">
-                <a href="{{route('jobApplication.index')}}" class="btn primary-outline-btn">Go back</a>
+                <a href="{{route('jobApplication.index')}}" class="btn primary-outline-btn">{{ __('job-application.Go back') }}</a>
               </div>
             </div>
           </div>

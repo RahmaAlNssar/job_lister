@@ -42,7 +42,7 @@
                   @endforeach
                 @else
                   <tr>
-                    <td>You haven't received any job applications.</td>
+                    <td>{{ __("job-application.You haven't received any job applications") }}.</td>
                     <td></td>
                     <td></td>
                     <td></td>
