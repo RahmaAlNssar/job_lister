@@ -55,6 +55,7 @@ export default {
   },
   mounted() {
     const q = this.getParameterByName("q", window.location.href);
+  
     if (q !== "") {
       this.jobTitle = q;
     }
